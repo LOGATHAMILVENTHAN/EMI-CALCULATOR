@@ -22,44 +22,48 @@ function App() {
   };
 
   return (
-    <div className="emi-container">
+    <>
+
       <h1 className="emi">EMI Calculator</h1>
-      <div className="input-group">
-        <h2>Principal Amount</h2>
-        <input
-          type="number"
-          value={principal}
-          onChange={(e) => setPrincipal(e.target.value)}
-          placeholder="Enter loan amount"
-        />
-      </div>
-      <div className="input-group">
-        <h2>Interest Rate (Annual)</h2>
-        <input
-          type="number"
-          value={rate}
-          onChange={(e) => setRate(e.target.value)}
-          placeholder="Enter interest rate"
-        />
-      </div>
-      <div className="input-group">
-        <h2>Tenure (in months)</h2>
-        <input
-          type="number"
-          value={tenure}
-          onChange={(e) => setTenure(e.target.value)}
-          placeholder="Enter loan tenure"
-        />
-      </div>
-      <button className="submit-btn" onClick={calculateEmi}>
-        Calculate EMI
-      </button>
-      {emi && (
-        <div className="result">
-          <h2>EMI: ₹{emi}</h2>
+      <div className="emi-container">
+
+        <div className="input-group">
+          <h2>Principal Amount</h2>
+          <input
+            type="number"
+            value={principal}
+            onChange={(e) => setPrincipal(e.target.value)}
+            placeholder="Enter loan amount"
+          />
         </div>
-      )}
-    </div>
+        <div className="input-group">
+          <h2>Interest Rate (Annual)</h2>
+          <input
+            type="number"
+            value={rate}
+            onChange={(e) => setRate(e.target.value)}
+            placeholder="Enter interest rate"
+          />
+        </div>
+        <div className="input-group">
+          <h2>Tenure (in months)</h2>
+          <input
+            type="number"
+            value={tenure}
+            onChange={(e) => setTenure(e.target.value)}
+            placeholder="Enter loan tenure"
+          />
+        </div>
+        <button className="submit-btn" onClick={calculateEmi}>
+          Calculate EMI
+        </button>
+        {emi && (
+          <div className="result">
+            <h2>EMI: ₹{emi}</h2>
+          </div>
+        )}
+      </div>
+    </>
   );
 }
 
